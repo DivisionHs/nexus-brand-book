@@ -1,0 +1,234 @@
+<style>
+/* mockups: escala por container query, tudo em HTML e SVG */
+.mk{container-type:inline-size;width:100%}
+.tab{display:flex;align-items:center;gap:10px;background:#1B1D3A;border-radius:10px 10px 0 0;padding:9px 16px 9px 12px;width:max-content;font:400 13px var(--f-text);color:#F4F5FA}
+.tab.l{background:#EEF0F8;color:#0A0B1E}
+.tab svg{flex:none}
+.bar{height:34px;background:#0F1024;border-radius:0 8px 0 0;width:100%}
+.bar.l{background:#F6F7FC}
+.ban{position:relative;aspect-ratio:1128/191;background:#0A0B1E;overflow:hidden}
+.ban .glow{position:absolute;right:-6cqw;top:-60%;width:46cqw;height:220%;background:radial-gradient(closest-side,rgba(139,109,255,.30),rgba(139,109,255,0))}
+.ban .sym{position:absolute;right:1.5cqw;top:50%;width:19cqw;transform:translateY(-50%)}
+.ban .tx{position:absolute;left:25cqw;top:50%;transform:translateY(-50%);display:grid;gap:.8cqw}
+.ban .tx b{font:600 2.7cqw/1.1 var(--f-display);letter-spacing:-.02em;color:#F4F5FA}
+.ban .tx i{font:500 1.15cqw var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#9AA0BA;font-style:normal}
+.lipg{background:#fff;color:#0A0B1E;border-radius:10px;overflow:hidden;border:1px solid #D9DBE8}
+.lipg .hd{position:relative;padding:0 3cqw 3cqw;margin-top:-4.4cqw;display:grid;gap:.5cqw}
+.lipg .av{width:12cqw;height:12cqw;border:.6cqw solid #fff;border-radius:1.4cqw;overflow:hidden;background:#0A0B1E;box-shadow:0 0 0 1px #D9DBE8}
+.lipg h5{margin:1.2cqw 0 0;font:600 2.4cqw var(--f-text)}
+.lipg p{margin:0;font:400 1.6cqw/1.4 var(--f-text);color:#4B4F6B}
+.lipg .bt{display:inline-block;font:600 1.5cqw var(--f-text);background:#5A3FD6;color:#fff;padding:.8cqw 2.2cqw;border-radius:99px;margin-top:1cqw;justify-self:start}
+.a4{aspect-ratio:210/297;background:#fff;color:#0A0B1E;border-radius:4px;position:relative;overflow:hidden;container-type:inline-size;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.a4 .m{position:absolute;inset:0;padding:8cqw}
+.ln{height:1.5cqw;background:#D9DBE8;border-radius:1cqw;margin-bottom:2.1cqw}
+.pbi{aspect-ratio:16/10;background:#0A0B1E;border-radius:10px;border:1px solid #2A2C4D;padding:2.4cqw;display:grid;grid-template-rows:auto auto 1fr;gap:1.8cqw;overflow:hidden}
+.pbi .top{display:flex;align-items:center;justify-content:space-between;gap:2cqw}
+.pbi .top span{font:500 1.15cqw var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:#9AA0BA}
+.pbi .kp{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw}
+.pbi .k{background:#14152B;border-radius:1.2cqw;padding:1.5cqw 1.8cqw;display:grid;gap:.4cqw}
+.pbi .k small{font:500 1cqw var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:#9AA0BA}
+.pbi .k b{font:600 3.2cqw/1 var(--f-display);font-variant-numeric:tabular-nums}
+.pbi .k em{font:500 1.05cqw var(--f-mono);font-style:normal;display:flex;align-items:center;gap:.6cqw}
+.pbi .rw{display:grid;grid-template-columns:1.5fr 1fr;gap:1.6cqw;min-height:0}
+.pbi .cd{background:#14152B;border-radius:1.2cqw;padding:1.4cqw;min-width:0;min-height:0;overflow:hidden}
+.pbi .cd h6{margin:0 0 .8cqw;font:600 1.3cqw var(--f-display)}
+.ytb{aspect-ratio:16/9;position:relative;background:#0A0B1E;overflow:hidden;border-radius:10px;border:1px solid #2A2C4D}
+.ytb .pad{position:absolute;inset:0}
+.ytb .safe{position:absolute;left:19.8%;top:35.3%;width:60.4%;height:29.4%;border:1px dashed rgba(34,216,232,.7);background:rgba(10,11,30,.74);display:flex;align-items:center;justify-content:center;gap:3cqw}
+.ytb .safe .w{width:48%}
+.ytb .safe .tg{display:grid;gap:.5cqw}
+.ytb .safe .tg b{font:600 2.1cqw/1.15 var(--f-display);letter-spacing:-.02em}
+.ytb .safe .tg i{font:500 .9cqw var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#9AA0BA;font-style:normal}
+.th{aspect-ratio:16/9;position:relative;background:radial-gradient(70% 90% at 82% 50%,rgba(139,109,255,.32),rgba(10,11,30,0) 70%),#0A0B1E;overflow:hidden;border-radius:10px;border:1px solid #2A2C4D}
+.th .tx{position:absolute;left:5cqw;top:50%;transform:translateY(-50%);display:grid;gap:2cqw;width:56cqw}
+.th .tx b{font:700 6.4cqw/1.05 var(--f-display);letter-spacing:-.03em}
+.th .tx b u{text-decoration:none;color:#22D8E8}
+.th .tx i{font:500 1.8cqw var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#9AA0BA;font-style:normal}
+.th .sy{position:absolute;right:2cqw;top:50%;width:40cqw;transform:translateY(-50%)}
+.sitef{background:#0A0B1E;border-radius:10px;border:1px solid #2A2C4D;overflow:hidden}
+.sitef .tb2{height:30px;background:#0F1024;display:flex;align-items:center;gap:6px;padding:0 12px}
+.sitef .tb2 span{width:9px;height:9px;border-radius:50%;background:#2A2C4D}
+.sitef header{display:flex;align-items:center;justify-content:space-between;padding:2.2cqw 4cqw;gap:3cqw;border-bottom:1px solid #2A2C4D}
+.sitef nav{display:flex;gap:3cqw;font:500 1.3cqw var(--f-text);color:#9AA0BA}
+.sitef .cta{font:600 1.25cqw var(--f-text);background:#8B6DFF;color:#0A0B1E;padding:.9cqw 2cqw;border-radius:1cqw}
+.sitef .hr{display:grid;grid-template-columns:1.1fr .9fr;gap:3cqw;align-items:center;padding:5cqw 4cqw}
+.sitef .hr h6{margin:0;font:600 4.6cqw/1.04 var(--f-display);letter-spacing:-.03em;text-wrap:balance}
+.sitef .hr p{font:400 1.5cqw/1.6 var(--f-text);color:#C9CDE0;margin:1.6cqw 0 2cqw}
+.sitef .fr{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqw;padding:0 4cqw 4cqw}
+.sitef .fr div{background:#14152B;border:1px solid #2A2C4D;border-radius:1.2cqw;padding:1.6cqw;display:grid;gap:.8cqw;font:600 1.35cqw var(--f-display)}
+.sitef .fr small{font:400 1.05cqw/1.5 var(--f-text);color:#9AA0BA}
+</style>
+<section class="cap" id="aplicacoes">
+<div class="wrap">
+  <header>
+    <span class="eb">09 · Aplicações</span>
+    <h2>A marca nas peças, na ordem de prioridade</h2>
+    <p class="lead">Sete aplicações, da mais urgente à que fica para depois. Todos os textos e números dos mockups são de exemplo. Nenhuma peça cita cliente, contrato ou valor.</p>
+  </header>
+
+  <h3 style="margin-top:0">1 · Logotipo e favicon</h3>
+  <div class="g2">
+    <figure><div class="stage" style="padding:22px 22px 0;align-content:end;justify-items:start;min-height:120px;background:#0F1024"><div class="tab">{{@favicon|dark|w=16}}Nexus Intelligence</div><div class="bar" style="margin-top:0"></div></div><figcaption>Aba do navegador, favicon de 16 px em tile escuro.</figcaption></figure>
+    <figure><div class="stage" style="padding:22px 22px 0;align-content:end;justify-items:start;min-height:120px;background:#E4E7F3;border-color:#D9DBE8"><div class="tab l">{{@favicon|light|w=16}}Nexus Intelligence</div><div class="bar l" style="margin-top:0"></div></div><figcaption>Aba em navegador claro, tile branco com borda fina.</figcaption></figure>
+  </div>
+  <div class="flex" style="gap:26px;margin-top:20px;align-items:flex-end">
+    <figure><div class="stage" style="padding:18px">{{@favicon|dark|w=88}}</div><figcaption>Ícone de app e atalho, 180 px</figcaption></figure>
+    <figure><div class="stage" style="padding:18px;border-radius:50%;width:112px;height:112px;overflow:hidden;padding:0">{{@avatar|dark|w=112}}</div><figcaption>Avatar redondo</figcaption></figure>
+    <p class="mut" style="font-size:14px;max-width:46ch">Arquivos de partida: <code>favicon-escuro.svg</code> para o navegador moderno, mais .ico de 16, 32 e 48 px e PNG de 180 px (a gerar a partir do SVG, ver capítulo 11).</p>
+  </div>
+
+  <h3>2 · Página da empresa no LinkedIn</h3>
+  <div class="g2" style="align-items:start;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)">
+    <figure>
+      <div class="mk"><div class="lipg">
+        <div class="ban"><div class="glow"></div><div class="tx"><b>Dados em ordem,<br>decisão com confiança</b><i>Governança · Automação · Engenharia de dados · BI</i></div><div class="sym">{{@simbolo|dark}}</div></div>
+        <div class="hd"><div class="av">{{@avatar|dark}}</div><h5>Nexus Intelligence</h5><p>Governança, automação, engenharia de dados e BI para empresas médias. Quem constrói é quem atende.</p><span class="bt">Seguir</span></div>
+      </div></div>
+      <figcaption>Banner de 1128 x 191 px e logo de 300 x 300 px. A área à esquerda fica livre para o logo que sobrepõe o banner.</figcaption>
+    </figure>
+    <div>
+      <div class="regra"><span class="tag sim">Banner</span><p>Texto a partir de 22% da largura, símbolo completo à direita, brilho suave. Uma frase só e a lista das quatro frentes em mono.</p></div>
+      <div class="regra"><span class="tag sim">Logo</span><p>Avatar com símbolo compacto sobre Noite, margem de 20% em cada lado. O LinkedIn recorta em quadrado de cantos suaves, o que respeita a proteção.</p></div>
+      <div class="regra"><span class="tag sim">Perfil pessoal</span><p>Mesmo avatar de símbolo apenas em fundos de perfil, para quem acompanha a página reconhecer a marca.</p></div>
+    </div>
+  </div>
+
+  <h3>3 · Assinatura de e-mail</h3>
+  <div class="g2" style="align-items:start">
+    <figure>
+      <div class="stage papel" style="justify-items:start;padding:30px;font-family:Arial,'Segoe UI',sans-serif">
+        <div style="display:grid;grid-template-columns:auto 1px 1fr;gap:18px;align-items:center">
+          <div style="width:76px">{{@compacto|light|w=76}}</div>
+          <div style="background:#D9DBE8;height:84px"></div>
+          <div style="display:grid;gap:2px;font-size:13px;line-height:1.5;color:#0A0B1E">
+            <b style="font-size:15px">Davi Henrick</b>
+            <span style="color:#4B4F6B">Fundador, Nexus Intelligence</span>
+            <span style="color:#4B4F6B">[telefone] · [e-mail]</span>
+            <span style="color:#5A3FD6;font-weight:700">[site]</span>
+          </div>
+        </div>
+      </div>
+      <figcaption>Versão clara, largura máxima de 520 px, texto em 13 px.</figcaption>
+    </figure>
+    <div>
+      <div class="regra"><span class="tag sim">Faça</span><p>Símbolo compacto em PNG de 152 px exibido a 76 px (2x), hospedado em link público. Fonte do sistema. Link em violeta escuro.</p></div>
+      <div class="regra"><span class="tag nao">Evite</span><p>Banner, frase motivacional, aviso de IA, logotipo digitado em fonte, gradiente em texto e imagem de fundo.</p></div>
+    </div>
+  </div>
+
+  <h3>4 · Proposta, relatório em PDF e nota (versão clara)</h3>
+  <div class="g3" style="align-items:start">
+    <figure>
+      <div class="a4"><div class="m">
+        <div style="width:46cqw">{{@horizontal|light}}</div>
+        <div style="position:absolute;left:8cqw;right:8cqw;top:36cqw">
+          <div style="font:500 3cqw var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:#5A3FD6">Proposta comercial</div>
+          <div style="font:600 8.4cqw/1.05 var(--f-display);letter-spacing:-.03em;margin-top:3cqw">[Nome do projeto]</div>
+          <div style="height:1.1cqw;width:20cqw;margin-top:5cqw;border-radius:1cqw;background:linear-gradient(90deg,#5A3FD6,#0B7F8F)"></div>
+        </div>
+        <div style="position:absolute;right:-14cqw;bottom:-6cqw;width:78cqw;opacity:.2">{{@simbolo|light}}</div>
+        <div style="position:absolute;left:8cqw;bottom:8cqw;font:400 2.6cqw var(--f-mono);color:#4B4F6B;letter-spacing:.06em">[EMPRESA] · [MÊS/ANO]</div>
+      </div></div>
+      <figcaption>Capa. Tinta sobre branco, uma linha de gradiente, símbolo como marca d'água.</figcaption>
+    </figure>
+    <figure>
+      <div class="a4"><div class="m" style="padding-top:7cqw">
+        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:.4cqw solid #D9DBE8;padding-bottom:3cqw">
+          <div style="width:24cqw">{{@wordmark_nosub|light}}</div><span style="font:500 2.2cqw var(--f-mono);color:#4B4F6B;letter-spacing:.08em">RELATÓRIO</span>
+        </div>
+        <div style="font:600 5.6cqw/1.1 var(--f-display);letter-spacing:-.02em;margin:9cqw 0 5cqw">1. Contexto e escopo</div>
+        <div class="ln" style="width:100%"></div><div class="ln" style="width:94%"></div><div class="ln" style="width:98%"></div><div class="ln" style="width:62%;margin-bottom:6cqw"></div>
+        <div style="border:.4cqw solid #D9DBE8;border-radius:1.4cqw;overflow:hidden;font:500 2.1cqw var(--f-mono);color:#0A0B1E">
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;background:#F6F7FC;padding:2cqw 3cqw;color:#4B4F6B"><span>ENTREGA</span><span>PRAZO</span><span>STATUS</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;padding:2cqw 3cqw;border-top:.4cqw solid #D9DBE8"><span>[Item 1]</span><span>[data]</span><span style="color:#0B7F8F">● ok</span></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;padding:2cqw 3cqw;border-top:.4cqw solid #D9DBE8"><span>[Item 2]</span><span>[data]</span><span style="color:#8a5a00">▲ atenção</span></div>
+        </div>
+        <div style="position:absolute;left:8cqw;right:8cqw;bottom:6cqw;display:flex;justify-content:space-between;font:400 2cqw var(--f-mono);color:#4B4F6B;border-top:.4cqw solid #D9DBE8;padding-top:2.4cqw"><span>Nexus Intelligence</span><span>Página 3 de 12</span></div>
+      </div></div>
+      <figcaption>Página interna de proposta ou relatório. Status com forma e texto, nunca só cor.</figcaption>
+    </figure>
+    <figure>
+      <div class="a4"><div class="m" style="padding-top:7cqw">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="width:38cqw">{{@horizontal|light}}</div>
+          <div style="text-align:right;font:500 2.2cqw var(--f-mono);color:#4B4F6B;letter-spacing:.06em">NOTA DE SERVIÇO<br><span style="color:#0A0B1E">Nº [000000]</span></div>
+        </div>
+        <div style="height:.5cqw;background:#D9DBE8;margin:7cqw 0 5cqw"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4cqw;font:400 2.3cqw/1.5 var(--f-text);color:#4B4F6B">
+          <div><b style="color:#0A0B1E;font:500 1.9cqw var(--f-mono);letter-spacing:.08em">EMITENTE</b><br>Nexus Intelligence Tecnologia LTDA<br>CNPJ [00.000.000/0000-00]</div>
+          <div><b style="color:#0A0B1E;font:500 1.9cqw var(--f-mono);letter-spacing:.08em">TOMADOR</b><br>[Razão social]<br>CNPJ [00.000.000/0000-00]</div>
+        </div>
+        <div style="margin-top:8cqw;border:.4cqw solid #D9DBE8;border-radius:1.4cqw;overflow:hidden;font:400 2.2cqw var(--f-text)">
+          <div style="display:grid;grid-template-columns:3fr 1fr;padding:2cqw 3cqw;background:#F6F7FC;font:500 1.9cqw var(--f-mono);color:#4B4F6B;letter-spacing:.08em"><span>DESCRIÇÃO</span><span style="text-align:right">VALOR</span></div>
+          <div style="display:grid;grid-template-columns:3fr 1fr;padding:2.4cqw 3cqw;border-top:.4cqw solid #D9DBE8"><span>[Descrição do serviço]</span><span style="text-align:right;font-family:var(--f-mono)">[valor]</span></div>
+        </div>
+        <div style="position:absolute;left:8cqw;right:8cqw;bottom:6cqw;font:400 1.9cqw var(--f-mono);color:#4B4F6B">Documento emitido pelo sistema da prefeitura. Esta é a versão visual de apoio.</div>
+      </div></div>
+      <figcaption>Nota de serviço, versão clara. Campos entre colchetes.</figcaption>
+    </figure>
+  </div>
+  <p class="mut" style="font-size:14px;margin-top:14px">Versão escura do relatório existe para apresentação em tela (reunião, compartilhamento de tela). Para papel e PDF enviado por e-mail, sempre a versão clara.</p>
+
+  <h3>5 · Tema de Power BI próprio da Nexus</h3>
+  <p class="mut">Para relatórios e materiais da Nexus. Nunca aplicar em entregável de cliente sem decisão dele. Arquivo pronto em <code>powerbi/Nexus-Intelligence-tema.json</code>.</p>
+  <div class="g2" style="align-items:start;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)">
+    <figure>
+      <div class="mk"><div class="pbi">
+        <div class="top"><div style="width:15cqw">{{@wordmark_nosub|dark}}</div><span>Visão geral · dados de exemplo</span></div>
+        <div class="kp">
+          <div class="k"><small>Linhas conferidas</small><b>12.480</b><em style="color:#2EC27E">● ok · 100%</em></div>
+          <div class="k"><small>Fontes ativas</small><b>7 de 8</b><em style="color:#F2B84B">▲ atenção · 1 fonte</em></div>
+          <div class="k"><small>Pendências</small><b>3</b><em style="color:#F0545B">■ crítico · 1</em></div>
+        </div>
+        <div class="rw">
+          <div class="cd"><h6>Volume por mês e origem</h6>{{#pbi_barras}}</div>
+          <div class="cd"><h6>Tendência</h6>{{#pbi_linhas}}</div>
+        </div>
+      </div></div>
+      <figcaption>Relatório de exemplo com a paleta de dados: quatro séries, status com forma e rótulo.</figcaption>
+    </figure>
+    <div>
+      <div class="regra"><span class="tag sim">Importar</span><p>No Power BI Desktop: Exibição, Temas, Procurar temas, escolher o arquivo .json.</p></div>
+      <div class="regra"><span class="tag sim">Contém</span><p>Seis cores de dados, fundo Noite, cartões em Superfície, texto claro, status ok, atenção e crítico, fontes Segoe UI.</p></div>
+      <div class="regra"><span class="tag nao">A conferir</span><p>O tema foi escrito pelas chaves oficiais do formato, mas ainda não foi importado em um Desktop real. Testar uma vez antes de usar e ajustar os detalhes de visual.</p></div>
+      <details style="margin-top:14px"><summary class="mono" style="cursor:pointer;color:var(--aqua);font-size:13px">Ver o JSON do tema</summary><pre style="overflow-x:auto;background:var(--sup);border:1px solid var(--linha);border-radius:10px;padding:14px;font:400 12px/1.5 var(--f-mono);margin-top:10px;max-height:360px">{{#json_tema}}</pre></details>
+    </div>
+  </div>
+
+  <h3>6 · YouTube e redes</h3>
+  <div class="g2" style="align-items:start;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)">
+    <figure>
+      <div class="mk"><div class="ytb"><div class="pad">{{@padrao_banner|dark}}</div>
+        <div class="safe"><div class="w">{{@horizontal_completo|dark}}</div><div class="tg"><b>Dados em ordem,<br>decisão com confiança</b><i>Governança · Automação · BI</i></div></div>
+      </div></div>
+      <figcaption>Capa de 2560 x 1440 px. A caixa tracejada é a área segura de 1546 x 423 px, onde nada pode ser cortado em celular, TV e computador.</figcaption>
+    </figure>
+    <div style="display:grid;gap:16px;justify-items:start">
+      <figure><div class="stage" style="padding:0;border-radius:50%;width:130px;height:130px;overflow:hidden">{{@avatar|dark|w=130}}</div><figcaption>Avatar de 800 x 800 px, recortado em círculo. O símbolo compacto fica dentro do círculo útil.</figcaption></figure>
+    </div>
+  </div>
+  <figure style="margin-top:20px"><div class="mk" style="max-width:640px"><div class="th">
+      <div class="tx"><i>Organização de dados</i><b>Seu relatório não bate com o do <u>financeiro</u>?</b></div>
+      <div class="sy">{{@simbolo|dark}}</div>
+    </div></div><figcaption>Miniatura de vídeo de 1280 x 720 px. Título em até 8 palavras, uma única palavra em aqua, símbolo grande à direita. Texto sempre no terço esquerdo, longe do contador de duração no canto inferior direito.</figcaption></figure>
+
+  <h3>7 · Site institucional (depois)</h3>
+  <figure>
+    <div class="mk"><div class="sitef">
+      <div class="tb2"><span></span><span></span><span></span></div>
+      <header><div style="width:25cqw">{{@horizontal|dark}}</div><nav><span>Frentes</span><span>Método</span><span>Conteúdo</span><span>Contato</span></nav><span class="cta">Falar comigo</span></header>
+      <div class="hr">
+        <div><h6>Dados em ordem, decisão com confiança.</h6><p>Eu organizo, confiro e documento os dados da sua empresa. Quem constrói é quem atende.</p><span class="cta" style="display:inline-block">Ver como eu trabalho</span></div>
+        <div>{{@simbolo|dark}}</div>
+      </div>
+      <div class="fr">
+        <div>Governança de dados<small>Regras, origem e dono de cada número.</small></div>
+        <div>Automação<small>Rotinas que rodam sozinhas e avisam quando falham.</small></div>
+        <div>Engenharia de dados<small>Fluxo organizado da origem ao relatório.</small></div>
+        <div>BI<small>Painéis que a diretoria consegue conferir.</small></div>
+      </div>
+    </div></div>
+    <figcaption>Cabeçalho, hero e frentes. O sistema já prevê: logotipo horizontal, símbolo completo no hero, botão em violeta com texto Noite (5,3:1), favicon em tile escuro e mesma tipografia da proposta.</figcaption>
+  </figure>
+</div>
+</section>

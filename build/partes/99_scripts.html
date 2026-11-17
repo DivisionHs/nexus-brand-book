@@ -1,0 +1,55 @@
+<script>
+(function () {
+  /* navegação: destaca o capítulo visível */
+  var links = [].slice.call(document.querySelectorAll('.nav ol a'));
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && map[e.target.id]) {
+          links.forEach(function (l) { l.classList.remove('on'); });
+          map[e.target.id].classList.add('on');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+
+  /* copiar HEX */
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest('[data-copy]');
+    if (!b) return;
+    var txt = b.getAttribute('data-copy'), old = b.textContent;
+    function ok() { b.textContent = 'copiado'; setTimeout(function () { b.textContent = old; }, 1200); }
+    function sel() {
+      var r = document.createRange(); b.textContent = txt; r.selectNodeContents(b);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      setTimeout(function () { b.textContent = old; }, 2500);
+    }
+    try { navigator.clipboard.writeText(txt).then(ok, sel); } catch (e) { sel(); }
+  });
+
+  /* teste de escala: troca o nível do símbolo conforme o tamanho */
+  var rng = document.getElementById('esc-range');
+  if (!rng) return;
+  var info = document.getElementById('esc-info');
+  var dark = document.getElementById('esc-dark'), light = document.getElementById('esc-light');
+  function nivel(n) { return n <= 19 ? 'favicon' : n <= 31 ? 'minimo' : n <= 95 ? 'compacto' : 'completo'; }
+  function pinta(host, tema, n, nv) {
+    var t = document.getElementById('t-' + nv + '-' + tema);
+    host.textContent = '';
+    if (!t) return;
+    var el = t.content.firstElementChild.cloneNode(true);
+    el.setAttribute('width', n); el.setAttribute('height', n);
+    host.appendChild(el);
+  }
+  function atualiza() {
+    var n = parseInt(rng.value, 10), nv = nivel(n);
+    pinta(dark, 'dark', n, nv); pinta(light, 'light', n, nv);
+    info.textContent = n + ' px, nível ' + ({minimo: 'mínimo'}[nv] || nv);
+  }
+  rng.addEventListener('input', atualiza);
+  atualiza();
+})();
+</script>

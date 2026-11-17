@@ -1,0 +1,65 @@
+<section class="cap" id="simbolo">
+<div class="wrap">
+  <header>
+    <span class="eb">04 · Símbolo final</span>
+    <h2>Convergência e ordem, em quatro níveis de detalhe</h2>
+    <p class="lead">O mesmo conceito, redesenhado para cada tamanho. O nível certo é escolhido pelo tamanho de exibição, nunca reduzindo o completo até virar borrão.</p>
+  </header>
+
+  <div class="g2" style="align-items:start">
+    <figure>
+      <div class="stage sup" style="padding:20px">{{@construcao|dark|w=520}}</div>
+      <figcaption>Construção do símbolo completo (grade de 20 unidades, caixa de 240). Três zonas lidas da esquerda para a direita.</figcaption>
+    </figure>
+    <div>
+      <h4>Anatomia</h4>
+      <div class="regra"><span class="tag sim">Círculos</span><p>Dados soltos. Cinco no completo, três no compacto, de tamanhos e alturas diferentes, nunca alinhados.</p></div>
+      <div class="regra"><span class="tag sim">Curvas</span><p>Convergência. Chegam ao anel em leque, como fontes diferentes entrando no mesmo ponto.</p></div>
+      <div class="regra"><span class="tag sim">Anel e núcleo</span><p>O hub. O núcleo claro é o ponto onde o número é conferido. Anel de 17 unidades, traço de 5.</p></div>
+      <div class="regra"><span class="tag sim">Faísca</span><p>Um ponto rosa no topo do anel, a marca de conferido. Aparece uma vez, em cada versão colorida.</p></div>
+      <div class="regra"><span class="tag sim">Quadrados</span><p>Saída em ordem. Três células alinhadas em coluna, com espaçamento igual. Mesmo traço da entrada.</p></div>
+      <div class="regra"><span class="tag sim">Halo</span><p>Anel fino a 31 unidades e brilho violeta. Só existe no completo sobre fundo escuro e dá a sensação de luz e profundidade.</p></div>
+    </div>
+  </div>
+
+  <h3>Os quatro níveis</h3>
+  <div class="g4">
+    <figure><div class="stage" style="min-height:170px">{{@simbolo|dark|w=130}}</div><figcaption><strong>Completo</strong><br>96 px ou mais, e a partir de 25 mm. Capa, banner, hero de site, abertura de vídeo.</figcaption></figure>
+    <figure><div class="stage" style="min-height:170px">{{@compacto|dark|w=96}}</div><figcaption><strong>Compacto</strong><br>32 a 95 px, e de 8 a 24 mm. Assinaturas, avatar, cabeçalhos. Traço mais grosso, sem halo.</figcaption></figure>
+    <figure><div class="stage" style="min-height:170px">{{@minimo|dark|w=64}}</div><figcaption><strong>Mínimo</strong><br>20 a 31 px. Ícones de lista, botões, favicon grande. Três entradas, hub e três saídas.</figcaption></figure>
+    <figure><div class="stage" style="min-height:170px">{{@favicon|dark|w=64}}</div><figcaption><strong>Favicon</strong><br>16 px. Desenhado na grade do pixel: duas entradas, hub e uma saída. Tem tile próprio.</figcaption></figure>
+  </div>
+
+  <h3>Teste de escala</h3>
+  <p class="mut">Arraste para ver qual nível entra em cada tamanho. Nos extremos aparecem os tamanhos reais de 16 e 32 px.</p>
+  <div class="card escala">
+    <div class="flex" style="justify-content:space-between"><span class="mono" id="esc-info">96 px, nível compacto</span><span class="mono mut">16 a 240 px</span></div>
+    <input id="esc-range" type="range" min="16" max="240" value="96" aria-label="Tamanho do símbolo em pixels">
+    <div class="g2">
+      <div class="stage" style="min-height:260px"><div id="esc-dark"></div></div>
+      <div class="stage branco" style="min-height:260px"><div id="esc-light"></div></div>
+    </div>
+  </div>
+  <template id="t-completo-dark">{{@simbolo|dark}}</template><template id="t-completo-light">{{@simbolo|light}}</template>
+  <template id="t-compacto-dark">{{@compacto|dark}}</template><template id="t-compacto-light">{{@compacto|light}}</template>
+  <template id="t-minimo-dark">{{@minimo|dark}}</template><template id="t-minimo-light">{{@minimo|light}}</template>
+  <template id="t-favicon-dark">{{@favicon|dark}}</template><template id="t-favicon-light">{{@favicon|light}}</template>
+
+  <h3>Uma cor só, antes do gradiente</h3>
+  <p>O símbolo funciona em preto puro e em branco puro, sem gradiente, sem halo e sem faísca de outra cor. A faísca vira um ponto da mesma cor. O gradiente é assinatura aplicada depois.</p>
+  <div class="g4">
+    <div class="stage branco" style="padding:20px">{{@simbolo|monopreto|w=170}}</div>
+    <div class="stage preto" style="padding:20px">{{@simbolo|monobranco|w=170}}</div>
+    <div class="stage violeta" style="padding:20px">{{@simbolo|monobranco|w=170}}</div>
+    <div class="stage papel" style="padding:20px">{{@simbolo|light|w=170}}</div>
+  </div>
+  <p class="mut" style="margin-top:12px;font-size:14px">Da esquerda para a direita: preto puro sobre branco, branco puro sobre preto, branco sobre o violeta da marca, versão colorida clara.</p>
+
+  <h3>Tamanhos reais</h3>
+  <div class="flex" style="gap:34px;align-items:flex-end">
+    <figure><div class="stage" style="padding:16px;gap:20px;display:flex">{{@favicon|dark|w=16}}{{@favicon|dark|w=32}}{{@favicon|dark|w=48}}</div><figcaption>Favicon em 16, 32 e 48 px</figcaption></figure>
+    <figure><div class="stage branco" style="padding:16px;gap:20px;display:flex">{{@favicon|light|w=16}}{{@favicon|light|w=32}}{{@favicon|light|w=48}}</div><figcaption>Favicon claro em 16, 32 e 48 px</figcaption></figure>
+    <figure><div class="stage" style="padding:16px;gap:20px;display:flex">{{@minimo|dark|w=24}}{{@minimo|dark|w=32}}{{@compacto|dark|w=48}}{{@compacto|dark|w=64}}</div><figcaption>Mínimo em 24 e 32 px, compacto em 48 e 64 px</figcaption></figure>
+  </div>
+</div>
+</section>

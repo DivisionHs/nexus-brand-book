@@ -1,0 +1,74 @@
+{
+  "name": "Nexus Intelligence (escuro)",
+  "dataColors": [
+    "#8B6DFF",
+    "#22D8E8",
+    "#A99F8E",
+    "#B9A8FF",
+    "#5F6B8C",
+    "#5D45E0"
+  ],
+  "background": "#0A0B1E",
+  "foreground": "#F4F5FA",
+  "tableAccent": "#8B6DFF",
+  "good": "#2EC27E",
+  "neutral": "#F2B84B",
+  "bad": "#F0545B",
+  "maximum": "#8B6DFF",
+  "center": "#B9A8FF",
+  "minimum": "#22D8E8",
+  "null": "#5B6080",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#F4F5FA"
+    },
+    "title": {
+      "fontSize": 14,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#F4F5FA"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI",
+      "color": "#9AA0BA"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#9AA0BA"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#14152B"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#F4F5FA"
+              }
+            },
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ]
+      }
+    }
+  }
+}
