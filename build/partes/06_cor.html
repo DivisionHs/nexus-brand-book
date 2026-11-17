@@ -22,8 +22,9 @@
   <h3>Parecer do designer sobre a proposta de cor</h3>
   <ul class="pts">
     <li><strong>Mantido:</strong> base Noite, superfícies, violeta de marca, aqua e rosa nos papéis que a proposta definiu. Todos os pares passaram nos contrastes medidos abaixo.</li>
-    <li><strong>Questionado e resolvido:</strong> neon em volume é o que faz uma marca B2B parecer gamer. A solução foi limitar a luz: gradiente só no símbolo, texto sempre em cor chapada, rosa em 2 a 3% e nunca em dado ou alerta, brilho (halo) só no símbolo completo.</li>
+    <li><strong>Questionado e resolvido:</strong> neon em volume é o que faz uma marca B2B parecer gamer. A solução foi limitar a luz: gradiente só no símbolo, texto sempre em cor chapada, rosa em uma única faísca por peça, no máximo 3%, e nunca em dado ou alerta, brilho (halo) só no símbolo completo.</li>
     <li><strong>Acrescentado:</strong> duas cores de apoio (Linha #2A2C4D e, na versão clara, Apoio claro #4B4F6B) para divisórias e texto secundário, porque sem elas o designer improvisa cinzas fora da paleta.</li>
+    <li><strong>Revisão 1.1:</strong> Linha e Linha clara são só divisórias decorativas (1,45:1 e 1,38:1). Campo de formulário, botão e cartão com contorno usam a Borda de controle, que passa de 3:1. O status também ganhou versão para fundo claro, porque os tons do escuro reprovam sobre branco.</li>
     <li><strong>Regra de contexto:</strong> a versão clara é padrão em tudo que a diretoria imprime ou abre em PDF. A versão escura é padrão em tela: site, vídeo, redes, relatório interativo.</li>
   </ul>
 
@@ -54,6 +55,13 @@
     <div class="sw light"><div class="c" style="background:#5A3FD6;color:#FFFFFF">Marca, 6,7:1</div><div class="i"><b>Violeta escuro</b>#5A3FD6<br>RGB 90 63 214<button data-copy="#5A3FD6">copiar HEX</button></div></div>
     <div class="sw light"><div class="c" style="background:#0B7F8F;color:#FFFFFF">Dados e links, 4,7:1</div><div class="i"><b>Aqua escuro</b>#0B7F8F<br>RGB 11 127 143<button data-copy="#0B7F8F">copiar HEX</button></div></div>
     <div class="sw light"><div class="c" style="background:#C21F86;color:#FFFFFF">Faísca, 5,5:1</div><div class="i"><b>Rosa escuro</b>#C21F86<br>RGB 194 31 134<button data-copy="#C21F86">copiar HEX</button></div></div>
+  </div>
+
+  <h4>Borda de controle (campo, botão, cartão com contorno)</h4>
+  <p class="mut" style="font-size:14px">Linha e Linha clara são só divisórias decorativas. Quando o contorno é o que mostra onde o componente está, usa-se a Borda de controle, que passa de 3:1 (sobre Superfície escura dá 3,5:1).</p>
+  <div class="g4">
+    <div class="sw"><div class="c" style="background:#646A9A;color:#FFFFFF">Contorno, 3,8:1 sobre Noite</div><div class="i"><b>Borda de controle</b>#646A9A<br>RGB 100 106 154<button data-copy="#646A9A">copiar HEX</button></div></div>
+    <div class="sw light"><div class="c" style="background:#7C819B;color:#0A0B1E">Contorno, 3,8:1 sobre branco</div><div class="i"><b>Borda de controle clara</b>#7C819B<br>RGB 124 129 155<button data-copy="#7C819B">copiar HEX</button></div></div>
   </div>
 
   <h3>Contrastes validados</h3>
@@ -90,8 +98,10 @@
       <div class="flex" style="gap:8px">{{#dados_escuro}}</div>
       <h4>Série de dados, fundo claro</h4>
       <div class="flex" style="gap:8px">{{#dados_claro}}</div>
-      <h4>Status (nunca em série de dados)</h4>
+      <h4>Status, fundo escuro (nunca em série de dados)</h4>
       <div class="flex" style="gap:8px">{{#status}}</div>
+      <h4>Status, fundo claro (PDF, proposta, nota)</h4>
+      <div class="flex" style="gap:8px">{{#status_claro}}</div>
     </div>
     <figure><div class="stage sup" style="padding:16px">{{#grafico_barras}}</div><figcaption>Exemplo com dados fictícios: quatro séries da paleta, rótulo direto e linha de grade discreta.</figcaption></figure>
   </div>
@@ -105,6 +115,7 @@
   <ul class="pts" style="margin-top:14px">
     <li>Valores acima de 15 indicam séries que ainda se separam bem em condição de daltonismo. Na versão clara a menor distância cai, por isso o limite recomendado ali é de quatro séries.</li>
     <li>Até cinco séries por gráfico; a sexta só com rótulo direto. Acima disso, agrupar em "Outros", cor Ardósia escura #5B6080 no escuro.</li>
+    <li>Índigo e Outros ficam em 3,1 sobre Noite e em 2,9 sobre Superfície, ou seja, abaixo de 3:1 em cartão. Usar só direto sobre Noite, em barras e áreas, ou com rótulo direto. Na versão clara, Ardósia sobre branco dá 3,1. Em linha fina nesses tons, pelo menos 2 px.</li>
     <li>Status sempre com forma e texto: círculo para ok, triângulo para atenção, quadrado para crítico, mais a palavra. A cor sozinha nunca é a informação.</li>
   </ul>
 </div>

@@ -83,6 +83,8 @@ BLOCOS = {
     "dados_claro": lambda: '<div style="background:#fff;border-radius:10px;padding:12px;display:flex;gap:8px;flex-wrap:wrap;color:#0A0B1E">'
                           + F.chips_dados(C.DADOS_CLARO, claro=True).replace("var(--aqua)", "#0B7F8F") + "</div>",
     "status": F.chips_status,
+    "status_claro": lambda: '<div style="background:#fff;border-radius:10px;padding:12px;display:flex;gap:8px;flex-wrap:wrap;color:#0A0B1E">'
+                            + F.chips_status(claro=True) + "</div>",
     "cvd_escuro": lambda: F.cvd(C.DADOS_ESCURO),
     "cvd_claro": lambda: F.cvd(C.DADOS_CLARO),
     "distancias": F.distancias,

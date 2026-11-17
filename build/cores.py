@@ -47,7 +47,13 @@ DADOS_CLARO = [
     ("Índigo", "#2E2490"),
 ]
 STATUS = [("Ok", "#2EC27E"), ("Atenção", "#F2B84B"), ("Crítico", "#F0545B")]
+# status para fundo claro (PDF, proposta, nota): os de cima reprovam sobre branco (2,3; 1,8; 3,4)
+STATUS_CLARO = [("Ok", "#17794A"), ("Atenção", "#8F5E00"), ("Crítico", "#C0262D")]
 NEUTRO_DADOS = ("Outros", "#5B6080")
+
+# borda de componente de interface (campo, botão, cartão com contorno): pede 3:1, a Linha não serve
+BORDA = "#646A9A"          # sobre Noite e Superfície
+BORDA_CLARA = "#7C819B"    # sobre branco
 
 
 def _rgb(h):
@@ -139,6 +145,11 @@ PARES_ESCURO = [
     ("Rosa faísca sobre Noite", ROSA, NOITE, "decorativo"),
     ("Noite sobre Violeta (botão)", NOITE, VIOLETA, "texto"),
     ("Noite sobre Aqua (botão)", NOITE, AQUA, "texto"),
+    ("Status Ok sobre Noite", STATUS[0][1], NOITE, "texto"),
+    ("Status Atenção sobre Noite", STATUS[1][1], NOITE, "texto"),
+    ("Status Crítico sobre Noite", STATUS[2][1], NOITE, "texto"),
+    ("Borda de controle sobre Noite", BORDA, NOITE, "grafico"),
+    ("Borda de controle sobre Superfície", BORDA, SUPERFICIE, "grafico"),
 ]
 PARES_CLARO = [
     ("Tinta sobre branco", TINTA, PAPEL, "texto"),
@@ -147,6 +158,10 @@ PARES_CLARO = [
     ("Aqua escuro sobre branco", AQUA_ESC, PAPEL, "texto"),
     ("Rosa escuro sobre branco", ROSA_ESC, PAPEL, "decorativo"),
     ("Branco sobre Violeta escuro (botão)", PAPEL, VIOLETA_ESC, "texto"),
+    ("Status Ok claro sobre branco", STATUS_CLARO[0][1], PAPEL, "texto"),
+    ("Status Atenção claro sobre branco", STATUS_CLARO[1][1], PAPEL, "texto"),
+    ("Status Crítico claro sobre branco", STATUS_CLARO[2][1], PAPEL, "texto"),
+    ("Borda de controle sobre branco", BORDA_CLARA, PAPEL, "grafico"),
 ]
 PARES_PROIBIDOS = [
     ("Aqua neon sobre branco", AQUA, PAPEL),

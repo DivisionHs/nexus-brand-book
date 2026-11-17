@@ -172,6 +172,8 @@ def contraste(pares, titulo_col="Par"):
         r = C.contraste(f, b)
         if uso == "decorativo":
             sel = '<span class="pill am">decorativo</span>'
+        elif uso == "grafico":
+            sel = '<span class="pill am">só contorno</span>'
         else:
             sel = _pill(r >= 4.5)
         linhas.append(f'<tr><td><span class="sq" style="background:{f}"></span>{html.escape(rot)}</td>'
@@ -200,18 +202,21 @@ def chips_dados(lista, claro=False):
         for n, h in lista)
 
 
-def chips_status():
+def chips_status(claro=False):
     formas = {
         "Ok": '<circle cx="9" cy="9" r="7" fill="{c}"/>',
         "Atenção": '<path d="M9 2L17 16H1Z" fill="{c}"/>',
         "Crítico": '<rect x="2" y="2" width="14" height="14" rx="2" fill="{c}"/>',
     }
+    lista = C.STATUS_CLARO if claro else C.STATUS
+    cor_btn = "#0B7F8F" if claro else "var(--aqua)"
     out = []
-    for n, h in C.STATUS:
+    for n, h in lista:
         out.append(f'<div style="display:grid;gap:4px;width:110px"><svg width="18" height="18" viewBox="0 0 18 18" style="margin-bottom:6px">{formas[n].format(c=h)}</svg>'
-                   f'<b style="font:600 12px var(--f-display)">{n}</b><button data-copy="{h}" style="all:unset;cursor:pointer;font:500 11px var(--f-mono);color:var(--aqua)">{h}</button></div>')
-    out.append(f'<div style="display:grid;gap:4px;width:110px"><span style="width:18px;height:6px;margin:6px 0 12px;border-radius:3px;background:{C.NEUTRO_DADOS[1]}"></span>'
-               f'<b style="font:600 12px var(--f-display)">Outros</b><button data-copy="{C.NEUTRO_DADOS[1]}" style="all:unset;cursor:pointer;font:500 11px var(--f-mono);color:var(--aqua)">{C.NEUTRO_DADOS[1]}</button></div>')
+                   f'<b style="font:600 12px var(--f-display)">{n}</b><button data-copy="{h}" style="all:unset;cursor:pointer;font:500 11px var(--f-mono);color:{cor_btn}">{h}</button></div>')
+    if not claro:
+        out.append(f'<div style="display:grid;gap:4px;width:110px"><span style="width:18px;height:6px;margin:6px 0 12px;border-radius:3px;background:{C.NEUTRO_DADOS[1]}"></span>'
+                   f'<b style="font:600 12px var(--f-display)">Outros</b><button data-copy="{C.NEUTRO_DADOS[1]}" style="all:unset;cursor:pointer;font:500 11px var(--f-mono);color:{cor_btn}">{C.NEUTRO_DADOS[1]}</button></div>')
     return "".join(out)
 
 
